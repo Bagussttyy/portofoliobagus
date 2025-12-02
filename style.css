@@ -2,25 +2,26 @@
 html, body {height:100%;}
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg,#667eea,#E6E6FA);
+    background: linear-gradient(135deg,#667eea,#0000);
     color: #fff;
+    min-height: 100vh;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
+    padding: 30px 0;
 }
 
-/* BATASI LEBAR MAKSIMAL SUPAYA ANDROID TIDAK BERANTAKAN */
+/* FLEX MODE */
 .container {
-    width: 100%;
-    max-width: 900px;
+    width: 95%;                 /* memenuhi layar di Windows */
+    max-width: 1300px;          /* batas tetap agar tidak kelebaran */
     background: rgba(0,0,0,0.7);
-    padding: 30px;
+    padding: 40px;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    overflow-y: auto;
-    max-height: 95vh;
 }
+
 
 h1,h2,h3 {text-align: center; margin-bottom: 20px;}
 
@@ -108,24 +109,86 @@ section {
 .icon-box:hover span {color: #fbbf24;}
 
 /* RESPONSIVE UNTUK ANDROID */
-@media(max-width: 600px){
+@media (max-width: 768px) {
     .container {
+        width: 90%;            /* kecil otomatis di HP */
         padding: 20px;
-        max-width: 95%;
-    }
-    .profile {
-        flex-direction: column;
-        text-align: center;
-    }
-    .profile-info p {
-        flex-direction: column;
-        gap: 2px;
-        text-align: left;
-    }
-    .profile-info p strong {
-        width: 100%;
-    }
-    .card {
-        width: 100%;
     }
 }
+
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+        padding: 18px;
+        border-radius: 15px;
+    }
+}
+
+/* ===== EDUCATION TIMELINE ===== */
+
+.education-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #abcad7;
+    letter-spacing: 1px;
+}
+
+.edu-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-left: 10px;
+    border-left: 3px solid rgba(255,255,255,0.4);
+}
+
+.edu-card {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    padding: 15px 20px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(4px);
+    transition: transform .3s;
+}
+
+.edu-card:hover {
+    transform: translateX(8px);
+}
+
+.edu-card::before {
+    content: "";
+    position: absolute;
+    left: -23px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    background: #06b6d4;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+}
+
+.year {
+    min-width: 80px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #06b6d4;
+}
+
+.year.ongoing {
+    color: #fbbf24;
+}
+
+.detail h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.detail p {
+    margin: 3px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
