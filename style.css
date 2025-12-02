@@ -1,0 +1,131 @@
+*{box-sizing:border-box;margin:0;padding:0;}
+html, body {height:100%;}
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg,#667eea,#E6E6FA);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* BATASI LEBAR MAKSIMAL SUPAYA ANDROID TIDAK BERANTAKAN */
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(0,0,0,0.7);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    overflow-y: auto;
+    max-height: 95vh;
+}
+
+h1,h2,h3 {text-align: center; margin-bottom: 20px;}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* FOTO */
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFO PROFIL */
+.profile-info {
+    flex: 1;
+    min-width: 260px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+}
+.profile-info p {
+    margin: 10px 0;
+    font-size: 16px;
+    display: flex;
+    gap: 8px;
+    line-height: 1.6;
+}
+.profile-info p strong {width: 90px;}
+
+/* CARD LIST */
+section {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.projects, .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 260px;
+    transition: 0.3s;
+}
+
+/* ICON KONTAK */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.icon-box {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: .2s;
+}
+.icon-box ion-icon {font-size: 40px;}
+.icon-box span {margin-top: 6px; display:block; font-size:14px;}
+.icon-box:hover {transform: scale(1.15); color: #fbbf24;}
+.icon-box:hover span {color: #fbbf24;}
+
+/* RESPONSIVE UNTUK ANDROID */
+@media(max-width: 600px){
+    .container {
+        padding: 20px;
+        max-width: 95%;
+    }
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-info p {
+        flex-direction: column;
+        gap: 2px;
+        text-align: left;
+    }
+    .profile-info p strong {
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+    }
+}
