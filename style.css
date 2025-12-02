@@ -109,20 +109,7 @@ section {
 .icon-box:hover span {color: #fbbf24;}
 
 /* RESPONSIVE UNTUK ANDROID */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;            /* kecil otomatis di HP */
-        padding: 20px;
-    }
-}
 
-@media (max-width: 500px) {
-    .container {
-        width: 95%;
-        padding: 18px;
-        border-radius: 15px;
-    }
-}
 
 /* ===== EDUCATION TIMELINE ===== */
 
@@ -191,4 +178,5 @@ section {
     font-size: 14px;
     opacity: 0.8;
 }
+
 
